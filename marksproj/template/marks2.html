@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {%load static%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'marks.css' %}">
+  </head>
+  <body>
+
+    <div class="container">
+
+    <div class="jumbotron" align='center'>
+  <h1>Hello Moviessite!</h1>
+  <p>hey !!! vishalsite here is the list of recent added movies </p>
+{% if marks_list %}
+  <table border="3px">
+
+    <thead>
+      <td>names</td>
+      <td>marks</td>
+
+    </thead>
+    {% for mark in marks_list %}
+<tr>
+  <td>{{mark.name}}</td>
+  <td>{{mark.marks}}</td>
+</tr>
+{% endfor %}
+
+  </table>
+  {% else %}
+  <p>no records found</p>
+  {% endif %}
+
+
+</div>
+</div>
+
+
+  </body>
+</html>
